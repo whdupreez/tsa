@@ -18,7 +18,7 @@ Based on http://zdatainc.com/2014/07/real-time-streaming-apache-storm-apache-kaf
 
 ### REST API
 
-![REST API](/tsa-topology.PNG?raw=true "REST API")
+![REST API](/tsa-rest-api.PNG?raw=true "REST API")
 
 ## Web Application Screenshots
 
