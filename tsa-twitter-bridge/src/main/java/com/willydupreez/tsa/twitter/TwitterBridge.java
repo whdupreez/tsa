@@ -34,22 +34,22 @@ public class TwitterBridge extends SpringRouteBuilder {
 	@Override
 	public void configure() throws Exception {
 		TwitterComponent tc = getContext().getComponent("twitter", TwitterComponent.class);
-        tc.setAccessToken(twitter.getAccessToken());
-        tc.setAccessTokenSecret(twitter.getAccessTokenSecret());
-        tc.setConsumerKey(twitter.getConsumerKey());
-        tc.setConsumerSecret(twitter.getConsumerSecret());
+		tc.setAccessToken(this.twitter.getAccessToken());
+		tc.setAccessTokenSecret(this.twitter.getAccessTokenSecret());
+		tc.setConsumerKey(this.twitter.getConsumerKey());
+		tc.setConsumerSecret(this.twitter.getConsumerSecret());
 
-        String csKeywords = keywords.findAll()
-        		.stream()
-        		.collect(Collectors.joining(","));
+		String csKeywords = this.keywords.findAll()
+				.stream()
+				.collect(Collectors.joining(","));
 
-        String twitterEndpoint = "twitter://streaming/filter?type=EVENT&keywords=" + csKeywords;
-        String kafkaEndpoint = String.format("kafka:%s:%d?topic=%s&zookeeperHost=%s&zookeeperPort=%d&groupId=bridge",
-        		kafka.getHost(),
-        		kafka.getPort(),
-        		kafka.getTopic(),
-        		kafka.getZookeeperHost(),
-        		kafka.getZookeeperPort());
+		String twitterEndpoint = "twitter://streaming/filter?type=EVENT&keywords=" + csKeywords;
+		String kafkaEndpoint = String.format("kafka:%s:%d?topic=%s&zookeeperHost=%s&zookeeperPort=%d&groupId=bridge",
+				this.kafka.getHost(),
+				this.kafka.getPort(),
+				this.kafka.getTopic(),
+				this.kafka.getZookeeperHost(),
+				this.kafka.getZookeeperPort());
 
 		from(twitterEndpoint)
 			.marshal().json(JsonLibrary.Jackson)

@@ -11,21 +11,21 @@ import com.willydupreez.tsa.twitter.TwitterProperties;
 @SpringBootApplication
 public class Application {
 
-    public static void main(String[] args) {
-    	System.setProperty("spring.profiles.active", "dev");
-        SpringApplication.run(Application.class, args);
-    }
+	public static void main(String[] args) {
+		System.setProperty("spring.profiles.active", "dev");
+		SpringApplication.run(Application.class, args);
+	}
 
-    @Bean
-    @ConfigurationProperties(prefix = "tsa.twitter")
-    public TwitterProperties twitterProperties() {
-    	return new TwitterProperties();
-    }
+	@Bean
+	@ConfigurationProperties(prefix = "tsa.twitter")
+	public TwitterProperties twitterProperties() {
+		return new TwitterProperties();
+	}
 
-    @Bean
-    @ConfigurationProperties(prefix = "tsa.kafka")
-    public KafkaProperties kafkaProperties() {
-    	return new KafkaProperties();
-    }
+	@Bean
+	@ConfigurationProperties(prefix = "tsa.kafka")
+	public KafkaProperties kafkaProperties() {
+		return new KafkaProperties();
+	}
 
 }
