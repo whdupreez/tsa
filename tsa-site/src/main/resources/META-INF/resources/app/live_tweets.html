@@ -1,0 +1,11 @@
+<h4>Live tweets</h4>
+<div *ngFor="#tweet of tweets" class="card card-inverse card-primary text-xs-center">
+    <div class="card-block">
+        <blockquote class="card-blockquote">
+            <p>{{tweet.text}}</p>
+            <footer>
+                <cite title="User"><small>by {{tweet.user.screenName}} {{tweet.createdAt | ago}}</small></cite>
+            </footer>
+        </blockquote>
+    </div>
+</div>

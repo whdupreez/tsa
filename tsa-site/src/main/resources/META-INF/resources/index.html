@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Angular 2 Hello World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+
+    <script src="lib/angular2/es6-shim.min.js"></script>
+    <script src="lib/angular2/system-polyfills.js"></script>
+    <script src="lib/angular2/system.js"></script>
+    <script src="lib/angular2/typescript.js"></script>
+    <script src="lib/angular2/angular2-polyfills.js"></script>
+    <script src="lib/angular2/Rx.js"></script>
+    <script src="lib/angular2/angular2.dev.js"></script>
+
+    <script>
+        System.config({
+            transpiler: 'typescript',
+            typescriptOptions: {
+                emitDecoratorMetadata: true
+            },
+            packages: {
+                'app': {
+                    defaultExtension: 'ts'
+                }
+            }
+        });
+        System.import('app/main')
+            .then(null, console.error.bind(console));
+    </script>
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/chartjs/Chart.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top navbar-dark">
+        <a class="navbar-brand" href="#">Real-time Twitter Stream Sentiment Analysis</a>
+    </nav>
+    <div class="container-fluid">
+        <div class="tsa-container">
+            <div main-app></div>
+        </div>
+    </div>
+</body>
+
+</html>

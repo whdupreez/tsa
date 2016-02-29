@@ -1,0 +1,11 @@
+Big Data
+Data Science
+Datascience
+Bigdata
+Hadoop
+MapReduce
+Natural Language Processing
+Apache Spark
+Apache Storm
+Kafka
+Machine Learning

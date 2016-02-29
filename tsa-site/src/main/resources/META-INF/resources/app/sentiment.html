@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-8">
+        <h4>Real-time Sentiment View</h4>
+        <br /><canvas id="sentimentChart" width="400" height="400"></canvas> <br /><br />
+        Total Positive Score: {{totalPos}}
+        <br /> Total Negative Score: {{totalNeg}}
+        <br /> Net Score: {{totalNet}}
+        <br />
+    </div>
+    <div class="col-sm-4">
+        <h4>Latest Tweet Analysis</h4>
+        <div *ngFor="#sentiment of sentiments" class="card card-inverse card-{{sentiment.style}} text-xs-center">
+            <div class="card-block">
+                <p>
+                    <small>{{sentiment.text}}</small>
+                </p>
+                <p>
+                    <small>
+                    Positive Score: {{sentiment.pos}} <br />
+                    Negative Score: {{sentiment.neg}} <br />
+                    Nett Score: {{sentiment.net}} <br />
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
