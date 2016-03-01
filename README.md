@@ -1,4 +1,4 @@
-# Twitter Sentiment Analysis
+# Twitter Sentiment Analysis (POC)
 
 A basic twitter sentiment analysis application using Spring Boot, Angular 2, Camel, Zookeeper, Kafka and Storm.
 
